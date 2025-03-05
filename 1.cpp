@@ -64,7 +64,7 @@ int main()
             cout << "--------------------------------------------------" << endl;
             break;
 
-            case 3:
+        case 3:
             if (size > 0)
             {   
                 cout << "enter your indexno: ";
