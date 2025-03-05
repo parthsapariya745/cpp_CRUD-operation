@@ -31,7 +31,7 @@ int main()
             cout << "enter your indexno: ";
             cin >> indexNo;
 
-            if (indexNo >= 0 && indexNo <= size)
+            if (indexNo >= 0 && indexNo < size)
             {
                 cout << "enter the add value: ";
                 cin >> Value;
