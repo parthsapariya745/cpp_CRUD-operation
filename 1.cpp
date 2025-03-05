@@ -3,15 +3,15 @@ using namespace std;
 
 int main()
 {
-    int user, size = 0,indexNo,newValue;
+    int user, size = 0, indexNo, Value;
 
-    int box[size];
+    int box[100];
     do
     {
         cout << "press 1 create" << endl;
         cout << "press 2 read" << endl;
         cout << "press 3 update" << endl;
-        cout << "press 4 delete" << endl; 
+        cout << "press 4 delete" << endl;
         cout << "press 0 Exit" << endl;
 
         cout << "--------------------------------------------------" << endl;
@@ -22,12 +22,30 @@ int main()
         switch (user)
         {
         case 1:
-            size++;
-            for (int i = 0; i < size; i++)
-            {
-                cout << "Enter the element = ";
-                cin >> box[i];
+            if(size == 0){
+                cout << "box[0] = ";
+                cin >> box[0];
+                size = 1;
             }
+
+            cout << "enter your indexno: ";
+            cin >> indexNo;
+
+            if (indexNo >= 0 && indexNo <= size)
+            {
+                cout << "enter the add value: ";
+                cin >> Value;
+                size++;
+                for (int i = size - 1; i > indexNo; i--)
+                {
+                    box[i] = box[i - 1];
+                }
+                box[indexNo] = Value;
+            }
+            else{
+                cout << "invalid index number of array";
+            }
+
             cout << "--------------------------------------------------" << endl;
             break;
 
@@ -35,29 +53,29 @@ int main()
             if (size > 0)
             {
                 for (int i = 0; i < size; i++)
-                { 
+                {
                     cout << "box[" << i << "] = " << box[i] << endl;
                 }
             }
-            else 
+            else
             {
-                cout << "please press 1 and create value!" << endl;
+                cout << "please press 1 create value!" << endl;
             }
             cout << "--------------------------------------------------" << endl;
             break;
-        
-        case 3:
+
+            case 3:
             if (size > 0)
             {   
-                cout << "enter your index number of update array value: ";
+                cout << "enter your indexno: ";
                 cin >> indexNo; 
                 if (indexNo >= 0 && indexNo < size)
                 {
-                    cout << "enter the new value of select index number: ";
-                    cin >> newValue;
+                    cout << "enter the new value: ";
+                    cin >> Value;
                     for (int i = 0; i < size; i++)
                     {
-                        box[indexNo] = newValue; 
+                        box[indexNo] = Value; 
                     }
                 }
                 else{
@@ -74,7 +92,7 @@ int main()
         case 4:
             if (size > 0)
             {   
-                cout << "enter your index number of delete array value: ";
+                cout << "enter your indexno: ";
                 cin >> indexNo;
                 if (indexNo >= 0 && indexNo < size)
                 {   
@@ -94,13 +112,14 @@ int main()
             }
             cout << "--------------------------------------------------" << endl;
             break;
-        
+
         case 0:
-            cout << "Exit!";
+            cout << "exit!";
             break;
 
         default:
             cout << "Invalid number" << endl << endl;
+            cout << "--------------------------------------------------" << endl;
             break;
         }
     } while (user != 0);
