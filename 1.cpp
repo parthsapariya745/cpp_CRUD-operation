@@ -22,30 +22,35 @@ int main()
         switch (user)
         {
         case 1:
-            if(size == 0){
+            if (size == 0)
+            {
                 cout << "box[0] = ";
                 cin >> box[0];
-                size = 1;
-            }
-
-            cout << "enter your indexno: ";
-            cin >> indexNo;
-
-            if (indexNo >= 0 && indexNo < size)
-            {
-                cout << "enter the add value: ";
-                cin >> Value;
                 size++;
-                for (int i = size - 1; i > indexNo; i--)
-                {
-                    box[i] = box[i - 1];
-                }
-                box[indexNo] = Value;
-            }
-            else{
-                cout << "invalid index number of array";
             }
 
+            else
+            {
+                size++;
+                cout << "enter your indexno: ";
+                cin >> indexNo;
+
+                if (indexNo >= 0 && indexNo < size)
+                {
+                    cout << "enter the add value: ";
+                    cin >> Value;
+                    
+                    for (int i = size - 1; i > indexNo; i--)
+                    {
+                        box[i] = box[i - 1];
+                    }
+                    box[indexNo] = Value;
+                }
+                else
+                {
+                    cout << "invalid index number of array" << endl;
+                }
+            }
             cout << "--------------------------------------------------" << endl;
             break;
 
@@ -66,20 +71,21 @@ int main()
 
         case 3:
             if (size > 0)
-            {   
+            {
                 cout << "enter your indexno: ";
-                cin >> indexNo; 
+                cin >> indexNo;
                 if (indexNo >= 0 && indexNo < size)
                 {
                     cout << "enter the new value: ";
                     cin >> Value;
-                    box[indexNo] = Value; 
+                    box[indexNo] = Value;
                 }
-                else{
+                else
+                {
                     cout << "invalid index number of array" << endl;
                 }
             }
-            else 
+            else
             {
                 cout << "please press 1 and create value!" << endl;
             }
@@ -88,22 +94,23 @@ int main()
 
         case 4:
             if (size > 0)
-            {   
+            {
                 cout << "enter your indexno: ";
                 cin >> indexNo;
                 if (indexNo >= 0 && indexNo < size)
-                {   
+                {
                     for (int i = indexNo; i < size; i++)
                     {
                         box[i] = box[i + 1];
                     }
                     size--;
                 }
-                else{
+                else
+                {
                     cout << "invalid index number of array" << endl;
                 }
             }
-            else 
+            else
             {
                 cout << "please press 1 and create value!" << endl;
             }
@@ -115,7 +122,8 @@ int main()
             break;
 
         default:
-            cout << "Invalid number" << endl << endl;
+            cout << "Invalid number" << endl
+                 << endl;
             cout << "--------------------------------------------------" << endl;
             break;
         }
