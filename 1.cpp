@@ -73,10 +73,7 @@ int main()
                 {
                     cout << "enter the new value: ";
                     cin >> Value;
-                    for (int i = 0; i < size; i++)
-                    {
-                        box[indexNo] = Value; 
-                    }
+                    box[indexNo] = Value; 
                 }
                 else{
                     cout << "invalid index number of array";
