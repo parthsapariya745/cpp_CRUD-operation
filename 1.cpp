@@ -76,7 +76,7 @@ int main()
                     box[indexNo] = Value; 
                 }
                 else{
-                    cout << "invalid index number of array";
+                    cout << "invalid index number of array" << endl;
                 }
             }
             else 
@@ -100,7 +100,7 @@ int main()
                     size--;
                 }
                 else{
-                    cout << "invalid index number of array";
+                    cout << "invalid index number of array" << endl;
                 }
             }
             else 
