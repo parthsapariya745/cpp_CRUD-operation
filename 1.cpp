@@ -8,46 +8,34 @@ int main()
     int box[100];
     do
     {
-        cout << "press 1 create" << endl;
-        cout << "press 2 read" << endl;
-        cout << "press 3 update" << endl;
-        cout << "press 4 delete" << endl;
-        cout << "press 0 Exit" << endl;
-
+        cout << "press 1 create" << endl << "press 2 read" << endl << "press 3 update" << endl << "press 4 delete" << endl << "press 0 Exit" << endl;
         cout << "--------------------------------------------------" << endl;
-
         cout << "Enter the number : ";
         cin >> user;
 
-        switch (user)
-        {
+        switch (user) {
         case 1:
-            if (size == 0)
-            {
+            if (size == 0) {
                 cout << "box[0] = ";
                 cin >> box[0];
                 size++;
             }
 
-            else
-            {
+            else {
                 size++;
                 cout << "enter your indexno: ";
                 cin >> indexNo;
 
-                if (indexNo >= 0 && indexNo < size)
-                {
+                if (indexNo >= 0 && indexNo < size) {
                     cout << "enter the add value: ";
                     cin >> Value;
                     
-                    for (int i = size - 1; i > indexNo; i--)
-                    {
+                    for (int i = size - 1; i > indexNo; i--) {
                         box[i] = box[i - 1];
                     }
                     box[indexNo] = Value;
                 }
-                else
-                {
+                else {
                     cout << "invalid index number of array" << endl;
                 }
             }
@@ -55,63 +43,51 @@ int main()
             break;
 
         case 2:
-            if (size > 0)
-            {
-                for (int i = 0; i < size; i++)
-                {
+            if (size > 0) {
+                for (int i = 0; i < size; i++) {
                     cout << "box[" << i << "] = " << box[i] << endl;
                 }
             }
-            else
-            {
+            else {
                 cout << "please press 1 create value!" << endl;
             }
             cout << "--------------------------------------------------" << endl;
             break;
 
         case 3:
-            if (size > 0)
-            {
+            if (size > 0) {
                 cout << "enter your indexno: ";
                 cin >> indexNo;
-                if (indexNo >= 0 && indexNo < size)
-                {
+                if (indexNo >= 0 && indexNo < size) {
                     cout << "enter the new value: ";
                     cin >> Value;
                     box[indexNo] = Value;
                 }
-                else
-                {
+                else {
                     cout << "invalid index number of array" << endl;
                 }
             }
-            else
-            {
+            else {
                 cout << "please press 1 and create value!" << endl;
             }
             cout << "--------------------------------------------------" << endl;
             break;
 
         case 4:
-            if (size > 0)
-            {
+            if (size > 0) {
                 cout << "enter your indexno: ";
                 cin >> indexNo;
-                if (indexNo >= 0 && indexNo < size)
-                {
-                    for (int i = indexNo; i < size; i++)
-                    {
+                if (indexNo >= 0 && indexNo < size) {
+                    for (int i = indexNo; i < size; i++) {
                         box[i] = box[i + 1];
                     }
                     size--;
                 }
-                else
-                {
+                else {
                     cout << "invalid index number of array" << endl;
                 }
             }
-            else
-            {
+            else {
                 cout << "please press 1 and create value!" << endl;
             }
             cout << "--------------------------------------------------" << endl;
@@ -122,9 +98,7 @@ int main()
             break;
 
         default:
-            cout << "Invalid number" << endl
-                 << endl;
-            cout << "--------------------------------------------------" << endl;
+            cout << "Invalid number" << endl << endl << "--------------------------------------------------" << endl;
             break;
         }
     } while (user != 0);
