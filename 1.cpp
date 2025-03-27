@@ -26,7 +26,7 @@ int main()
                 cout << "enter your indexno: ";
                 cin >> indexNo;
 
-                if (indexNo >= 0 && indexNo < size) {
+                if (indexNo < size) {
                     cout << "enter the add value: ";
                     cin >> Value;
                     
@@ -58,7 +58,7 @@ int main()
             if (size > 0) {
                 cout << "enter your indexno: ";
                 cin >> indexNo;
-                if (indexNo >= 0 && indexNo < size) {
+                if (indexNo < size) {
                     cout << "enter the new value: ";
                     cin >> Value;
                     box[indexNo] = Value;
@@ -77,7 +77,7 @@ int main()
             if (size > 0) {
                 cout << "enter your indexno: ";
                 cin >> indexNo;
-                if (indexNo >= 0 && indexNo < size) {
+                if (indexNo < size) {
                     for (int i = indexNo; i < size; i++) {
                         box[i] = box[i + 1];
                     }
